@@ -1,10 +1,6 @@
 package main
 
-import (
-	"errors"
-	"fmt"
-	"math"
-)
+import "fmt"
 
 func main() {
 	// a := []int{5, 4, 3, 2, 1}
@@ -17,18 +13,26 @@ func main() {
 	// 	fmt.Println(i)
 	// }
 	// fmt.Println(object)
-	result, err := sqrt(6)
+	// result, err := sqrt(6)
 
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println(result)
-	}
+	// if err != nil {
+	// 	fmt.Println(err)
+	// } else {
+	// 	fmt.Println(result)
+	// }
+
+	n := 10
+	increment(&n)
+	fmt.Println(n)
 }
 
-func sqrt(x float64) (float64, error) {
-	if x < 0 {
-		return 0, errors.New("No negative numbers")
-	}
-	return math.Sqrt(x), nil
+func increment(x *int) {
+	*x++
 }
+
+// func sqrt(x float64) (float64, error) {
+// 	if x < 0 {
+// 		return 0, errors.New("No negative numbers")
+// 	}
+// 	return math.Sqrt(x), nil
+// }
